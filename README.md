@@ -5,13 +5,13 @@ This package was developed for ER, in the ABU Robocon 2023.
 The game rules are [here](https://official-robocon.com/gakusei/).
 
 ## Subscribe
-- '/livox/mid_70' : PointCloud data from LIVOX MID-70 (sensor_msgs/msg/PointCloud2)
-- '/livox/mid_360' : PointCloud data from LIVOX MID-360 (sensor_msgs/msg/PointCloud2)
-- '/velodyne_points' : PointCloud data from Velodyne VLP-16 (sensor_msgs/msg/PointCloud2)
+- `/livox/mid_70` : PointCloud data from LIVOX MID-70 (sensor_msgs/msg/PointCloud2)
+- `/livox/mid_360` : PointCloud data from LIVOX MID-360 (sensor_msgs/msg/PointCloud2)
+- `/velodyne_points` : PointCloud data from Velodyne VLP-16 (sensor_msgs/msg/PointCloud2)
 
 ## Publish
-- '/ER/aim_assistant_3d/dbg_poles' : Pole data recognized and visualized for debug (visualization_msgs/msg/MarkerArray)
-- '/ER/aim_assistant_3d/target_poles' : Pole data, actually used for Robot control. This data are sent to the package of shooting unit, and used for aim. (aim_assistant_msgs/msg/PoleArray)
+- `/ER/aim_assistant_3d/dbg_poles` : Pole data recognized and visualized for debug (visualization_msgs/msg/MarkerArray)
+- `/ER/aim_assistant_3d/target_poles` : Pole data, actually used for Robot control. This data are sent to the package of shooting unit, and used for aim. (aim_assistant_msgs/msg/PoleArray)
 
 ## Usage
 By following steps, run this package in demo mode.
