@@ -1,0 +1,130 @@
+/ER/aim_assistant_node:
+  ros__parameters:
+    publish_period: 10 #ms
+    mid_70_detection_process_period: 500 #ms
+    adjust_type2_base: false
+
+    detect_range_params:
+      max_detection_range_x: 25.0
+      min_detection_range_x: -25.0
+      max_detection_range_y: 25.0
+      min_detection_range_y: -25.0
+      max_detection_range_z: 10.0
+      min_detection_range_z: 0.0
+
+      detect_margin: 0.25
+      type1_z_range: [0.4, 0.8]
+      type2_z_range: [0.5, 0.8]
+      type3_z_range: [1.0, 1.5]
+      # section_1_x: [2.6,9.4]
+      # section_1_y: [2.6,4.2]
+      # section_1_z: [0.3,0.65]
+      # section_2_x: [4.5,7.5]
+      # section_2_y: [4.5,7.5]
+      # section_2_z: [0.45,0.8]
+      # section_3_x: [4.5,7.5]
+      # section_3_y: [4.5,7.5]
+      # section_3_z: [1.1,2.0]
+      # section_1_x: [1.925,9.975]
+      # section_1_y: [1.925,3.125]
+      # # section_1_z: [0.3,0.65]
+      # section_1_z: [0.43,0.79]
+      # section_2_x: [4.1,7.5]
+      # section_2_y: [4.1,7.5]
+      # section_2_z: [0.7,0.98]
+      # section_3_x: [4.1,7.5]
+      # section_3_y: [4.1,7.5]
+      # section_3_z: [1.1,2.0]
+      # trim 500 500
+      # for type 1
+      section_1_x: [2.550, 3.050]
+      section_1_y: [2.550, 3.050]
+      section_1_z: [0.25, 0.79]
+      section_2_x: [5.70, 6.20]
+      section_2_y: [2.550, 3.050]
+      section_2_z: [0.25, 0.79]
+      section_3_x: [8.850, 9.350]
+      section_3_y: [2.550, 3.050]
+      section_3_z: [0.25, 0.79]
+
+      # for type 2
+      section_4_x: [4.45, 4.95]
+      section_4_y: [4.45, 4.95]
+      section_4_z: [0.45, 0.98]
+      section_5_x: [6.95, 7.45]
+      section_5_y: [4.45, 4.95]
+      section_5_z: [0.45, 0.98]
+
+      # for type 3
+      section_6_x: [5.70, 6.20]
+      section_6_y: [5.70, 6.20]
+      section_6_z: [0.8, 2.0]
+
+      # for enemy type 1
+      section_7_x: [2.550, 3.050]
+      section_7_y: [8.850, 9.350]
+      section_7_z: [0.25, 0.79]
+      section_8_x: [5.70, 6.20]
+      section_8_y: [8.850, 9.350]
+      section_8_z: [0.25, 0.79]
+      section_9_x: [8.850, 9.350]
+      section_9_y: [8.850, 9.350]
+      section_9_z: [0.25, 0.79]
+
+      # for enemy type 2
+      section_10_x: [4.45, 4.95]
+      section_10_y: [6.95, 7.45]
+      section_10_z: [0.7, 0.98]
+      section_11_x: [6.95, 7.45]
+      section_11_y: [6.95, 7.45]
+      section_11_z: [0.7, 0.98]
+
+    vlp16_detection_range_params:
+      max_detection_range_x: 25.0
+      min_detection_range_x: -25.0
+      max_detection_range_y: 25.0
+      min_detection_range_y: -25.0
+      max_detection_range_z: 10.0
+      min_detection_range_z: 0.0
+      section_1_x: [1.0, 3.0] # This parameter changed to do lidar-based crop.
+      section_1_y: [-5.0, 5.0]
+      section_1_z: [-0.3, 0.0]
+      section_2_x: [3.0, 10.0]
+      section_2_y: [-5.0, 5.0]
+      section_2_z: [0.0, 1.0]
+
+    filter_params:
+      radius_outlier_removal:
+        search_radius: 1.0
+        min_neighbors_in_search_radius: 10
+      VGF:
+        leaf_size: 0.01
+
+    euclidean_clustering_params:
+      cluster_tolerance: 0.1
+      min_cluster_size: 10
+      max_cluster_size: 1000
+
+    cylinder_fitting_params:
+      k_nearest_neighbors: 15
+      normal_distance_weight: 0.1
+      max_iterations: 10000
+      distance_threshold: 0.03
+      radius_limits: [0.05, 0.075]
+
+    circle2d_fitting_params:
+      k_nearest_neighbors: 15
+      normal_distance_weight: 0.1
+      max_iterations: 10000
+      distance_threshold: 0.005
+      radius_limits: [0.05, 0.075]
+
+    pole_matching_params:
+      distance_threshold: 0.25
+
+    pole_correction_params:
+      poles_buffer_max_size: 10
+      correction_method: "no_filtering" # "kalman_filter", "two_point_avg", "low_pass_filter", "no_filtering"
+      kf_q: [0.001, 0.001]
+      kf_r: [0.01, 0.01]
+      kf_init_p: [0.8, 0.8]

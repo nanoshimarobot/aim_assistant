@@ -1,0 +1,26 @@
+rosbag2_bagfile_information:
+  version: 5
+  storage_identifier: mcap
+  duration:
+    nanoseconds: 39415101046
+  starting_time:
+    nanoseconds_since_epoch: 1671867944327837094
+  message_count: 1979
+  topics_with_message_count:
+    - topic_metadata:
+        name: /livox/lidar
+        type: sensor_msgs/msg/PointCloud2
+        serialization_format: cdr
+        offered_qos_profiles: ""
+      message_count: 1979
+  compression_format: ""
+  compression_mode: ""
+  relative_file_paths:
+    - ros2_output_0.mcap
+  files:
+    - path: ros2_output_0.mcap
+      starting_time:
+        nanoseconds_since_epoch: 1671867944327837094
+      duration:
+        nanoseconds: 39415101046
+      message_count: 1979
