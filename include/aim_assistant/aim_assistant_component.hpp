@@ -48,8 +48,6 @@
 #include "aim_assistant_msgs/msg/pole.hpp"
 #include "aim_assistant_msgs/msg/pole_array.hpp"
 
-#include <jsk_rviz_plugin_msgs/msg/overlay_text.hpp>
-
 #include "field_info.hpp"
 #include "low_pass_filter.hpp"
 #include "kalman_filter.hpp"
@@ -228,7 +226,6 @@ private:
   std::array<Pole, POLE_NUM> ref_ideal_poles_;
   std::array<Pole, POLE_NUM> dbg_detected_pole_;
 
-  std::shared_ptr<jsk_rviz_plugin_msgs::msg::OverlayText> dbg_detection_info_;
   std::string dbg_detection_info_text_;
 
   std_msgs::msg::UInt16 current_target_pole_id_;
@@ -237,7 +234,6 @@ private:
   rclcpp::Publisher<sensor_msgs::msg::PointCloud2>::SharedPtr dbg_mid_70_map_based_cloud_pub_;
   rclcpp::Publisher<sensor_msgs::msg::PointCloud2>::SharedPtr dbg_vlp_map_based_cloud_pub_;
   rclcpp::Publisher<visualization_msgs::msg::MarkerArray>::SharedPtr dbg_poles_pub_;
-  rclcpp::Publisher<jsk_rviz_plugin_msgs::msg::OverlayText>::SharedPtr dbg_detection_info_pub_;
   // rclcpp::Publisher<sensor_msgs::msg::PointCloud2>::SharedPtr dbg_converted_cloud_pub_;
   rclcpp::Publisher<std_msgs::msg::Float32>::SharedPtr dbg_diff_from_ideal_pub_;
   rclcpp::Publisher<std_msgs::msg::Float32>::SharedPtr dbg_filtered_diff_from_ideal_pub_;

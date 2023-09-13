@@ -11,7 +11,7 @@ AimAssistant::AimAssistant(const std::string &name_space, const rclcpp::NodeOpti
   listener_ = std::make_shared<tf2_ros::TransformListener>(*tf_buffer_);
   using namespace std::chrono_literals;
   using namespace cpp_general;
-  dbg_detection_info_ = std::make_shared<jsk_rviz_plugin_msgs::msg::OverlayText>();
+  // dbg_detection_info_ = std::make_shared<jsk_rviz_plugin_msgs::msg::OverlayText>();
   current_target_pole_id_.data = POLE_NUM;
 
   // Pole init_pole(Vector2(0.0, 0.0), 0.0, 0.0, 0.0);
@@ -218,8 +218,8 @@ AimAssistant::AimAssistant(const std::string &name_space, const rclcpp::NodeOpti
       this->create_publisher<sensor_msgs::msg::PointCloud2>("aim_assistant_3d/dbg_corrected_cloud2", rclcpp::QoS(10));
   dbg_vlp_map_based_cloud_pub_ = this->create_publisher<sensor_msgs::msg::PointCloud2>(
       "aim_assistant_3d/dbg_corrected_vlp_cloud2", rclcpp::QoS(10));
-  dbg_detection_info_pub_ = this->create_publisher<jsk_rviz_plugin_msgs::msg::OverlayText>(
-      "aim_assistant_3d/detection_info", rclcpp::QoS(10));
+  // dbg_detection_info_pub_ = this->create_publisher<jsk_rviz_plugin_msgs::msg::OverlayText>(
+  //     "aim_assistant_3d/detection_info", rclcpp::QoS(10));
   dbg_diff_from_ideal_pub_ =
       this->create_publisher<std_msgs::msg::Float32>("aim_assistant_3d/dbg/diff_from_ideal", rclcpp::QoS(10));
   dbg_filtered_diff_from_ideal_pub_ =

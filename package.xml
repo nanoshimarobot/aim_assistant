@@ -27,7 +27,6 @@
   <depend>laser_geometry</depend>
   <depend>libpcl-all-dev</depend>
   <depend>aim_assistant_msgs</depend>
-  <depend>jsk_rviz_plugin_msgs</depend>
 
   <export>
     <build_type>ament_cmake</build_type>
