@@ -31,7 +31,7 @@ def generate_launch_description():
 
     list = [
         ExecuteProcess(
-            cmd=['ros2', 'bag', 'play', os.path.join(get_package_share_directory("aim_assistant"), 'demo_bag', 'moving_with_livox/moving_with_livox.mcap')
+            cmd=['ros2', 'bag', 'play', os.path.join(get_package_share_directory("aim_assistant"), 'demo_bag', 'moving_with_livox.mcap')
             , '--remap', '/livox/lidar:=/livox/mid_70'],
             output='screen'
         ),
