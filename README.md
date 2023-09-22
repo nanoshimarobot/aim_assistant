@@ -24,10 +24,7 @@ git clone https://github.com/nanoshimarobot/aim_assistant_msgs.git
 ```
 
 ### Download rosbag data
-```sh
-cd ~/colcon_ws/src/aim_assistant/
-. rosbag_downloader.sh
-```
+[LINK](https://drive.google.com/drive/folders/13KaOI0FClanAosM9b7fJ-Iu5OQ4jx4k5?usp=sharing)
 
 ### Build package
 ```sh
